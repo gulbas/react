@@ -5,6 +5,22 @@
     <title>Task 2</title>
 </head>
 <body>
+<form>
+    <fieldset>
+        <legend>Рассчитать площадь</legend>
+        <p><label for="select"></label>
+            <select id="select">
+                <option disabled>Выберите фигуру</option>
+                <option value="square">Квадрат</option>
+                <option selected value="triangle">Треугольник</option>
+                <option value="rectangle">Прямоугольник</option>
+            </select></p>
+        <div id="param"></div>
+    </fieldset>
+    <p><input type="submit" id='button' value="Отправить" onclick="return false;"></p>
+</form>
+<span>Смотри console.log</span>
+<div id="result"></div>
 <script src="js/script.js"></script>
 </body>
 </html>

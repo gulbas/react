@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3</title>
+</head>
+<body>
+<script src="js/script.js"></script>
+
+<script>
+    const manager = new Manager('Вася', 30, new Date, 100000, 67);
+    const developer1 = new Developer('Вася', 27, '25/07/2017', 50000, 'Front-end', manager);
+    const developer2 = new Developer('Петя', 28, '28/07/2017', 60000, 'Back-end', manager);
+
+    manager.addDeveloper(developer1);
+    manager.addDeveloper(developer2);
+    manager.addDeveloper(manager);
+    manager.displayInfo();
+    console.log(manager);
+</script>
+
+</body>
+</html>

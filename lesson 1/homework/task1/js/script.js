@@ -8,8 +8,11 @@
 */
 
 /**
- * @param {number} times
- * @param {function} callback
+ * Функция которая принимает параметр times и в цикле вызывает функцию callback
+ * @callback loopCallback
+ *
+ * @param {number} times - Количество итераций
+ * @param {loopCallback} callback - Обратный вызов, который обрабатывает одну итерацию.
  */
 function loop(times = 0, callback = null) {
     if ((typeof callback) === 'function') for (let i = 0; i < times; i++) callback();
