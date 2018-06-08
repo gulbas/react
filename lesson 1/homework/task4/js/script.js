@@ -6,22 +6,34 @@
 Этот объект нужно вывести в консоли.
 */
 
+/**
+ * Generator
+ * @returns {IterableIterator<*>}
+ */
 function* generateSequence() {
-    let user = {}, name, age, dateOfBirth, salary;
-    yield name = prompt('Введите имя');
-    yield user.name = name;
-    yield age = prompt('Введите возраст');
-    yield user.age = age;
-    yield dateOfBirth = prompt('Введите дату рождения');
-    yield user.birthDay = dateOfBirth;
-    yield salary = prompt('Введите желаемую зарплату');
-    yield user.salary = salary;
-    return console.log(user);
+    // let user = {}, name, age, dateOfBirth, salary;
+    yield  prompt('Введите имя');
+    // yield user.name = name;
+    yield parseInt(prompt('Введите возраст'));
+    // yield user.age = age;
+    yield  prompt('Введите дату рождения');
+    // yield user.birthDay = dateOfBirth;
+    yield parseInt(prompt('Введите желаемую зарплату'));
+    // yield user.salary = salary;
+
 }
 
 function result() {
+    let user = {};
     let generator = generateSequence();
-    for(let value of generator) value;
+    let bbb = ['name', 'age', 'dateOfBirth', 'salary'];
+    // console.log(generator);
+    for(let value of generator) {
+        value;
+        // console.log(value)
+        bbb.forEach((element) => { user.element = value});
+    }
+    console.log(user);
 }
 
 result();
