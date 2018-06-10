@@ -15,7 +15,11 @@
  * @param {loopCallback} callback - Обратный вызов, который обрабатывает одну итерацию.
  */
 function loop(times = 0, callback = null) {
-    if ((typeof callback) === 'function') for (let i = 0; i < times; i++) callback();
+    if ((typeof callback) === 'function') {
+        for (let i = 0; i < times; i++) {
+            callback();
+        }
+    }
 }
 
 loop(5, () => console.log('Привет'));

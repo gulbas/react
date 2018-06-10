@@ -42,7 +42,7 @@ function calculateArea(figure, ...param) {
     result.innerHTML = '';
     result.innerHTML = `${obj.figure} area = ${obj.area}`;
 
-    return console.log(obj);
+    return obj;
 }
 
 let select = document.getElementById('select');
@@ -53,10 +53,14 @@ let button = document.getElementById('button');
  */
 button.addEventListener('click', () => {
     if (select.value === 'square') {
-        calculateArea('square', 4)
+        calculateArea('square', 4);
+        console.log(calculateArea('square', 4));
     } else if (select.value === 'rectangle') {
-        calculateArea('rectangle', 4, 2)
+        calculateArea('rectangle', 4, 2);
+        console.log(calculateArea('rectangle', 4, 2));
     } else if (select.value === 'triangle') {
-        calculateArea('triangle', 4, 2, 1)
+        calculateArea('triangle', 4, 2, 1);
+        console.log(calculateArea('triangle', 4, 2, 1));
     }
 });
+console.log()
