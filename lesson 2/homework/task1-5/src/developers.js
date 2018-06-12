@@ -1,5 +1,3 @@
-"use strict";
-
 export default class Developers {
     constructor(name, firstName, nickName, url) {
         this.name = name;
