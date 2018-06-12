@@ -6,7 +6,7 @@ export default class Datetime {
     }
 
     render() {
-        let div = document.getElementById('date');
+        const div = document.getElementById('date');
         div.innerHTML = `<a href="#">Click me</a>`;
         div.addEventListener('click', () => alert(`${this.date.getDate()}.${this.date.getMonth()}.${this.date.getFullYear()}`));
     }
