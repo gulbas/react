@@ -7,7 +7,7 @@ export default class Developers {
     }
 
     render() {
-        let div = document.getElementById('developer');
+        const div = document.getElementById('developer');
         let html = `Developers: ${this.name}`;
         html += ` ${this.firstName}`;
         html += ` <a href="${this.url}">${this.nickName}</a>`;
