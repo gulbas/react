@@ -15,3 +15,16 @@ Simply run this command
 npm i
 npm run dev
 ```
+
+## Lesson 3
+1-5 tasks
+
+Path `task/`
+
+Simply run this command
+```
+npm i
+npm run dev
+```
+
+

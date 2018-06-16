@@ -1,46 +1,28 @@
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-import Menu from './Menu.jsx';
 import Header from './Header.jsx';
+import Body from './Body.jsx';
+import Decks from './Decks.jsx';
+import Footer from './Footer.jsx';
 
-const menuItems = [
-  {
-    link: 'https://geekbrains.ru', title: 'Geekbrains'
-  },
-  {
-    link: 'https://google.com', title: 'Google'
-  }
-];
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css';
 
-const menuItems1 = [
-  {
-    link: 'https://geekbrains.ru', title: 'Geekbrains1'
-  },
-  {
-    link: 'https://google.com', title: 'Google1'
-  },
-  {
-    link: 'https://geekbrains.ru', title: 'Geekbrains1'
-  },
-  {
-    link: 'https://google.com', title: 'Google1'
-  },
-  {
-    link: 'https://geekbrains.ru', title: 'Geekbrains1'
-  },
-  {
-    link: 'https://google.com', title: 'Google1'
-  }
-];
+import { menuItems } from './MenuItems.jsx'
 
 class App extends Component {
   render () {
     return (
       <div>
-        <Header size="small" />
-        <Menu items={menuItems} />
-        <Menu items={menuItems1} />
+        <Header items={menuItems}/>
+        <br/>
+        <div id="body">
+        <Body/>
+        <br/>
+        <Decks/>
+        </div>
+        <Footer items={menuItems}/>
       </div>
     );
   }
