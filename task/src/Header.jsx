@@ -14,7 +14,8 @@ import {
   Form, 
   FormGroup, 
   Label, 
-  Input } from 'reactstrap';
+  Input }
+  from 'reactstrap';
 
 import { menuItems } from './MenuItems.jsx'
 
