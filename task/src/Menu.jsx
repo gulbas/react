@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { NavItem, NavLink } from 'reactstrap';
+import React, {Component} from 'react';
+import {NavItem, NavLink} from 'reactstrap';
 
 export default class Menu extends Component {
-  render () {
-    const { items } = this.props;
-    return (
-      items.map(item => <NavItem><NavLink href={item.link}>{item.title}</NavLink></NavItem>)
-    );
-  }
+    render() {
+        const {items} = this.props;
+        return (
+            items.map(item => <NavItem><NavLink href={item.link}>{item.title}</NavLink></NavItem>)
+        );
+    }
 }
