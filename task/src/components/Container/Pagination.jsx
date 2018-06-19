@@ -1,13 +1,13 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 
-export default class Paginat extends React.Component {
+export default class Paginat extends Component {
     render() {
         return (
             <Pagination aria-label="Page navigation example">
                 <PaginationItem active>
                     <PaginationLink href="#">
-                        ← Older
+                        ← Olderd
                     </PaginationLink>
                 </PaginationItem>
                 <PaginationItem>

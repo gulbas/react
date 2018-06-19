@@ -19,9 +19,9 @@ import './Container.sass'
 export default class Example extends React.Component {
     render() {
         return (
-            <Container className='body'>
+            <Container className="body">
                 <Row>
-                    <Col md='8'>
+                    <Col md="8">
                         <h1 className="my-4">Page Heading
                             <small> Secondary Text</small>
                         </h1>
