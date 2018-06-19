@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from './Menu.jsx';
+import Menu from 'components/Menu';
 import {
     Collapse,
     Navbar,
@@ -15,9 +15,10 @@ import {
     FormGroup,
     Label,
     Input
-} from 'reactstrap';
+}
+    from 'reactstrap';
 
-import {menuItems} from './MenuItems.jsx'
+import {menuItems} from '../Menu/MenuItems.jsx'
 
 
 export default class Example extends React.Component {
@@ -46,15 +47,16 @@ export default class Example extends React.Component {
 
     render() {
         return (
+            /* Navigation */
             <div>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">Name of the site</NavbarBrand>
+                <Navbar className='fixed-top navbar-dark bg-dark' light expand="md">
+                    <NavbarBrand href="/">Start Bootstrap</NavbarBrand>
                     <NavbarToggler onClick={this.toggle}/>
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <Menu items={menuItems}/>
                             <NavItem>
-                                <Button onClick={this.toggleModal} outline color="info">Login</Button>
+                                <Button onClick={this.toggleModal} outline color="light">Login</Button>
                                 <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
                                     <ModalHeader toggle={this.toggleModal}>Login</ModalHeader>
                                     <ModalBody>
