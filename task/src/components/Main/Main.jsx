@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import Search from './Search';
-import PostCard from './PostCard';
-import Link from './Link';
-import {linkPart1, linkPart2} from './CategoriesLink';
+import Search from 'components/Container/Search';
+import Body from 'components/Main/Body';
+import Decks from 'components/Main/Decks'
+import Link from 'components/Container/Link';
+import {linkPart1, linkPart2} from 'components/Container/CategoriesLink';
 
 import {
     Container,
@@ -14,18 +15,18 @@ import {
 }
     from 'reactstrap';
 
-import './Container.sass'
+import 'components/Container/Container.sass'
 
-export default class Example extends Component {
+export default class Main extends Component {
     render() {
         return (
             <Container className="body">
                 <Row>
                     <Col md="8">
-                        <h1 className="my-4">Page Heading
-                            <small> Secondary Text</small>
+                        <h1 className="my-4">Main
                         </h1>
-                        <PostCard/>
+                        <Body/>
+                        <Decks/>
                     </Col>
                     <Col md='4'>
                         <Card>
