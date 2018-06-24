@@ -1,8 +1,7 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import Search from 'components/Container/Search';
 import Links from 'components/Container/Link';
 import {linkPart1, linkPart2} from 'components/Container/CategoriesLink';
-import {Link} from 'react-router-dom';
 
 import {
     Container,
@@ -14,20 +13,19 @@ import {
 }
     from 'reactstrap';
 
-import 'components/Container/Container.sass'
-
-export default class UserList extends PureComponent {
+export default class User extends PureComponent {
     render() {
-        const {users} = this.props;
+        const { user } = this.props;
         return (
             <Container className="body">
                 <Row>
                     <Col md="8">
                         <h1 className="my-4">User List
                         </h1>
-                        <ul>
-                            {users.map(user => <li key={user.id}><Link to={`/users/${user.id}`}>{user.name}</Link></li>)}
-                        </ul>
+                        <div>
+                            {user.name} ({user.username})
+                            <a href={`mailto:${user.email}`}>Email me</a>
+                        </div>
                     </Col>
                     <Col md='4'>
                         <Card>

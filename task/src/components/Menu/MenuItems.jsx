@@ -1,11 +1,17 @@
 export const menuItems = [
     {
-        id: 1, link: 'https://geekbrains.ru', title: 'Main'
+        id: 1, link: '/', title: 'Main'
     },
     {
-        id: 2, link: 'https://t.me/joinchat/CRh7yBKGg5g2f0ZvhhkoVQ', title: 'Blog'
+        id: 2, link: '/blog', title: 'Blog'
     },
     {
-        id: 3, link: 'https://github.com/gulbas', title: 'User'
+        id: 3, link: '/users', title: 'User'
+    },
+    {
+        id: 4, link: '/comments', title: 'Comments'
+    },
+    {
+        id: 5, link: '/clock', title: 'Clock'
     }
 ];
