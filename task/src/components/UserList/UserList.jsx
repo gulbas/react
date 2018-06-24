@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import Search from './Search';
-import PostCard from './PostCard';
-import Link from './Link';
-import {linkPart1, linkPart2} from './CategoriesLink';
+import Search from 'components/Container/Search';
+import Link from 'components/Container/Link';
+import {linkPart1, linkPart2} from 'components/Container/CategoriesLink';
 
 import {
     Container,
@@ -14,18 +13,21 @@ import {
 }
     from 'reactstrap';
 
-import './Container.sass'
+import 'components/Container/Container.sass'
 
-export default class Example extends Component {
+export default class UserList extends Component {
     render() {
+        const {users, onLoadMore} = this.props;
         return (
             <Container className="body">
                 <Row>
                     <Col md="8">
-                        <h1 className="my-4">Page Heading
-                            <small> Secondary Text</small>
+                        <h1 className="my-4">User List
                         </h1>
-                        <PostCard/>
+                        <ul>
+                            {users.map(user => <li key={user.id}>{user.body}</li>)}
+                        </ul>
+                        <button onClick={onLoadMore}>Load more</button>
                     </Col>
                     <Col md='4'>
                         <Card>

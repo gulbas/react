@@ -5,6 +5,8 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Container from 'components/Container';
 import Clock from 'components/Container/Clock';
+import Main from 'components/Main';
+import UserList from 'containers/UserListContainer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.sass';
@@ -14,7 +16,9 @@ class App extends Component {
         return (
             <div>
                 <Header/>
-                <Container/>
+                {/*<Container/>*/}
+                {/*<Main/>*/}
+                <UserList/>
                 <Clock/>
                 <Footer/>
             </div>
