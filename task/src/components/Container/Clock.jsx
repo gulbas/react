@@ -1,7 +1,15 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import Moment from 'moment';
+import Widgets from 'components/Widgets';
 
-export default class Clock extends Component {
+import {
+    Container,
+    Row,
+    Col
+}
+    from 'reactstrap';
+
+export default class Clock extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +34,16 @@ export default class Clock extends Component {
     render() {
         const date = this.state.dateTimestamp;
         return (
-            <div className="clock">{date}</div>
+             <Container className="body">
+                <Row>
+                    <Col md="8">
+                        <h1 className="my-4">Clock
+                        </h1>
+                        <div className="clock">{date}</div>
+                    </Col>
+                 <Widgets/>
+                </Row>
+            </Container>
         );
     }
 }

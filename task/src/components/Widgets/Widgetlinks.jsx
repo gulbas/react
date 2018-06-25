@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 
-export default class Link extends Component {
+export default class Widgetlinks extends PureComponent {
     render() {
         const {items} = this.props;
         return (

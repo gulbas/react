@@ -1,22 +1,17 @@
-import React, {Component} from 'react';
-import Search from './Search';
-import PostCard from './PostCard';
-import Link from './Link';
-import {linkPart1, linkPart2} from './CategoriesLink';
+import React, {PureComponent} from 'react';
+import PostCard from 'components/Container/PostCard';
+import Widgets from 'components/Widgets';
 
 import {
     Container,
     Row,
-    Col,
-    Card,
-    CardHeader,
-    CardBody
+    Col
 }
     from 'reactstrap';
 
-import './Container.sass'
+import 'components/Container/Containercss.sass';
 
-export default class Example extends Component {
+export default class Example extends PureComponent {
     render() {
         return (
             <Container className="body">
@@ -27,30 +22,7 @@ export default class Example extends Component {
                         </h1>
                         <PostCard/>
                     </Col>
-                    <Col md='4'>
-                        <Card>
-                            <CardHeader><h5>Search</h5></CardHeader>
-                            <CardBody>
-                                <Search/>
-                            </CardBody>
-                        </Card>
-                        <Card>
-                            <CardHeader><h5>Categories</h5></CardHeader>
-                            <CardBody>
-                                <Row>
-                                    <Col><Link items={linkPart1}/></Col>
-                                    <Col><Link items={linkPart2}/></Col>
-                                </Row>
-                            </CardBody>
-                        </Card>
-                        <Card>
-                            <CardHeader><h5>Side Widget</h5></CardHeader>
-                            <CardBody>
-                                You can put anything you want inside of these side widgets. They are easy to use, and
-                                feature the new Bootstrap 4 card containers!
-                            </CardBody>
-                        </Card>
-                    </Col>
+                   <Widgets/>
                 </Row>
             </Container>
         );
