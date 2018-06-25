@@ -1,12 +1,16 @@
-import React, {Component, Fragment} from 'react';
+import React, {PureComponent} from 'react';
 import {NavItem, NavLink} from 'reactstrap';
 
-export default class Menu extends Component {
+export default class Menu extends PureComponent {
     render() {
         const {items} = this.props;
         return (
-            items.map(item => <Fragment><NavItem><NavLink key={item.id}
-                                                          href={item.link}>{item.title}</NavLink></NavItem></Fragment>)
+            items.map(item =>
+                    <NavItem>
+                        <NavLink key={item.id} href={item.link}>
+                            {item.title}
+                            </NavLink>
+                    </NavItem>)
         );
     }
 }
