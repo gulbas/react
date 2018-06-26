@@ -6,8 +6,7 @@ import {
     Container,
     Row,
     Col
-}
-    from 'reactstrap';
+} from 'reactstrap';
 
 export default class Clock extends PureComponent {
     constructor(props) {
@@ -34,14 +33,14 @@ export default class Clock extends PureComponent {
     render() {
         const date = this.state.dateTimestamp;
         return (
-             <Container className="body">
+            <Container className="body">
                 <Row>
                     <Col md="8">
                         <h1 className="my-4">Clock
                         </h1>
                         <div className="clock">{date}</div>
                     </Col>
-                 <Widgets/>
+                    <Widgets/>
                 </Row>
             </Container>
         );
