@@ -6,10 +6,9 @@ import {
     Container,
     Row,
     Col
-}
-    from 'reactstrap';
+} from 'reactstrap';
 
-import 'components/Container/Containercss.sass';
+import './Containercss.sass';
 
 export default class Example extends PureComponent {
     render() {
