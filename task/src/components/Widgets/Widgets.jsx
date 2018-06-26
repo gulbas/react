@@ -9,15 +9,14 @@ import {
     Card,
     CardHeader,
     CardBody
-}
-    from 'reactstrap';
+} from 'reactstrap';
 
 
 export default class Widgets extends PureComponent {
     render() {
         return (
             <Fragment>
-                    <Col md='4'>
+                    <Col md="4">
                         <Card>
                             <CardHeader><h5>Search</h5></CardHeader>
                             <CardBody>
