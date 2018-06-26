@@ -5,8 +5,7 @@ import {
     Container,
     Row,
     Col
-}
-    from 'reactstrap';
+} from 'reactstrap';
 
 export default class User extends PureComponent {
     render() {
