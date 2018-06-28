@@ -14,8 +14,7 @@ import {
     CardHeader,
     CardBody,
     CardText
-}
-    from 'reactstrap';
+} from 'reactstrap';
 
 export default class User extends PureComponent {
     constructor(props) {
