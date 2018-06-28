@@ -1,5 +1,10 @@
 import React from 'react';
 import Paginat from './Pagination';
+
+import {connect} from 'react-redux';
+
+import {loadPost} from 'actions/comments';
+
 import {
     Card,
     Button,

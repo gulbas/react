@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-import { loadStarted, loadCompleted, loadFailed } from 'actions/users';
+import { loadStarted, loadCompleted, loadFailed } from 'actions/posts';
 
 const initialState = {
     loading: false,

@@ -1,5 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
 import Widgets from 'components/Widgets';
+
+import {Provider} from 'react-redux';
+import store from '../../store';
 
 import {
     Container,
@@ -9,21 +12,23 @@ import {
 
 export default class User extends PureComponent {
     render() {
-        const { user } = this.props;
+        const {user} = this.props;
         return (
-            <Container className="body">
-                <Row>
-                    <Col md="8">
-                        <h1 className="my-4">User List
-                        </h1>
-                        <div>
-                            {user.name} ({user.username})
-                            <a href={`mailto:${user.email}`}>Email me</a>
-                        </div>
-                    </Col>
-                 <Widgets/>
-                </Row>
-            </Container>
+            <Provider store={store}>
+                <Container className="body">
+                    <Row>
+                        <Col md="8">
+                            <h1 className="my-4">User List
+                            </h1>
+                            <div>
+                                {user.name} ({user.username})
+                                <a href={`mailto:${user.email}`}>Email me</a>
+                            </div>
+                        </Col>
+                        <Widgets/>
+                    </Row>
+                </Container>
+            </Provider>
         );
     }
 }

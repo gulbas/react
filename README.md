@@ -17,7 +17,7 @@ npm run dev
 ```
 
 
-## Lesson 6
+## Lesson 7
 
 Path `task/`
 

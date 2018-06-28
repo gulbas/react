@@ -1,6 +1,9 @@
 import React, {PureComponent} from 'react';
 import Widgets from 'components/Widgets';
 
+import {connect} from 'react-redux';
+import {loadComments, addComments} from 'actions/comments';
+
 import {
     Container,
     Row,
@@ -16,14 +19,13 @@ import {
     CardText
 } from 'reactstrap';
 
-export default class User extends PureComponent {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: []
-        };
-    }
+class Comments extends PureComponent {
 
+    componentDidMount() {
+        const {load} = this.props;
+
+        load();
+    }
 
     handleSubmit = (comment) => {
         comment.preventDefault();
@@ -33,11 +35,13 @@ export default class User extends PureComponent {
             return;
         }
         const item = {
+            id: this.props.comments.length  + 1,
             author: authorVal,
             comment: textVal
         };
-        this.setState({data: [...this.state.data, item]});
+        this.props.handleAddComment(item);
     };
+
 
     render() {
         return (
@@ -61,7 +65,7 @@ export default class User extends PureComponent {
                             </Form>
                         </div>
                         <div>
-                            {this.state.data.map((item, index) =>
+                            {this.props.comments.map((item, index) =>
                                 <div key={index}>
                                     <Card>
                                         <CardHeader><b>{item.author}</b></CardHeader>
@@ -78,3 +82,22 @@ export default class User extends PureComponent {
         );
     }
 }
+
+function mapStateToProps(state, props) {
+    return {
+        ...props,
+        loading: state.comments.loading,
+        comments: state.comments.entries,
+
+    }
+}
+
+function mapDispatchToProps(dispatch, props) {
+    return {
+        ...props,
+        load: () => dispatch(loadComments()),
+        handleAddComment: comment => dispatch(addComments(comment))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Comments);

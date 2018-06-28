@@ -3,20 +3,19 @@ import ReactDom from 'react-dom';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.sass';
 import routes from './routes';
 import store from './store';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.sass';
-
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 class App extends PureComponent {
     render() {
         return (
-            <div>
-                <Provider store={store}>
+            <Provider store={store}>
+                <div>
                     <Header/>
                     <BrowserRouter>
                         <Switch>
@@ -24,8 +23,8 @@ class App extends PureComponent {
                         </Switch>
                     </BrowserRouter>
                     <Footer/>
-                </Provider>
-            </div>
+                </div>
+            </Provider>
         );
     }
 }
