@@ -16,7 +16,9 @@ npm i
 npm run dev
 ```
 
-## Lesson 5
+
+## Lesson 6
+
 Path `task/`
 
 Sample https://blackrockdigital.github.io/startbootstrap-blog-home/#

@@ -1,25 +1,24 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import ReactDom from 'react-dom';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Container from 'components/Container';
-import Clock from 'components/Container/Clock';
-import Main from 'components/Main';
-import UserList from 'containers/UserListContainer';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './style.sass';
+import routes from './routes';
 
-class App extends Component {
+class App extends PureComponent {
     render() {
         return (
             <div>
                 <Header/>
-                {/*<Container/>*/}
-                {/*<Main/>*/}
-                <UserList/>
-                <Clock/>
+                <BrowserRouter>
+                    <Switch>
+                        {routes.map((route) => <Route key={route.toString()} {...route}/>)}
+                    </Switch>
+                </BrowserRouter>
                 <Footer/>
             </div>
         );

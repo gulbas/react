@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import Menu from 'components/Menu';
 import {
     Collapse,
@@ -21,7 +21,7 @@ import {
 import {menuItems} from '../Menu/MenuItems.jsx'
 
 
-export default class Example extends React.Component {
+export default class Header extends PureComponent {
     constructor(props) {
         super(props);
 
