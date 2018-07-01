@@ -5,7 +5,7 @@ export default class Widgetlinks extends PureComponent {
         const {items} = this.props;
         return (
             <ul className="list-unstyled">
-                {items.map(item => <li key={item.id}><a href={item.link}>{item.title}</a></li>)}
+                {items.map((item, idx) => <li key={idx}><a href={item.link}>{item.title}</a></li>)}
             </ul>
         );
     }

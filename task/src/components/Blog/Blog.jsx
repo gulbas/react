@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import PostCard from 'components/Container/PostCard';
+import PostList from 'containers/PostListContainer';
 import Widgets from 'components/Widgets';
 
 import {
@@ -8,7 +8,7 @@ import {
     Col
 } from 'reactstrap';
 
-import './Containercss.sass';
+import '../Container/Containercss.sass';
 
 export default class Example extends PureComponent {
     render() {
@@ -16,10 +16,8 @@ export default class Example extends PureComponent {
             <Container className="body">
                 <Row>
                     <Col md="8">
-                        <h1 className="my-4">Page Heading
-                            <small> Secondary Text</small>
-                        </h1>
-                        <PostCard/>
+                        <h1 className="my-4">Blog</h1>
+                        <PostList/>
                     </Col>
                    <Widgets/>
                 </Row>

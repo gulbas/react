@@ -21,7 +21,7 @@ export default handleActions({
         return {
             ...state,
             page: state.page + 1,
-            entries: state.entries.concat(action.payload),
+            entries: [...state.entries, ...action.payload],
             loading: false,
         };
     },

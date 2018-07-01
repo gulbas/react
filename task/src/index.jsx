@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, {PureComponent, Fragment} from 'react';
 import ReactDom from 'react-dom';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
@@ -16,11 +16,13 @@ class App extends PureComponent {
         return (
             <Provider store={store}>
                 <div>
-                    <Header/>
                     <BrowserRouter>
+                        <Fragment>
+                        <Header/>
                         <Switch>
-                            {routes.map((route) => <Route key={route.toString()} {...route}/>)}
+                            {routes.map((route, idx) => <Route key={idx} {...route}/>)}
                         </Switch>
+                        </Fragment>
                     </BrowserRouter>
                     <Footer/>
                 </div>

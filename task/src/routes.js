@@ -1,4 +1,4 @@
-import Container from 'components/Container/Container';
+import Blog from 'components/Blog';
 import Clock from 'components/Container/Clock';
 import Main from 'components/Main';
 import UserList from 'containers/UserListContainer';
@@ -30,7 +30,7 @@ export default [
     {
         path: '/blog',
         exact: true,
-        component: Container,
+        component: Blog,
     },
     {
         path: '/wigets',
