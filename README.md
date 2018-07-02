@@ -17,7 +17,9 @@ npm run dev
 ```
 
 
-## Lesson 7
+## Lesson 8
+
+Without Backend
 
 Path `task/`
 
