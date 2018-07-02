@@ -1,12 +1,13 @@
-import { createAction } from 'redux-actions';
+import {createAction} from 'redux-actions';
 
 export const loadStarted = createAction('[Users] Load started');
 export const loadCompleted = createAction('[Users] Load completed');
 export const loadFailed = createAction('[Users] Load failed');
 
-export const loadUsers = (dispatch, pageNumber) => {
+export const loadUsers = () => (dispatch, getState) => {
     dispatch(loadStarted());
-    fetch(`https://jsonplaceholder.typicode.com/users?_limit=10&_page=${pageNumber}`)
+    const state = getState();
+    fetch(`https://jsonplaceholder.typicode.com/users?_limit=10&_page=${state.users.page}`)
         .then((response) => response.json())
         .then((users) => {
             dispatch(loadCompleted(users));
