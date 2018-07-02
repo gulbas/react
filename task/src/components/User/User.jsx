@@ -14,7 +14,6 @@ export default class User extends PureComponent {
     render() {
         const {user} = this.props;
         return (
-            <Provider store={store}>
                 <Container className="body">
                     <Row>
                         <Col md="8">
@@ -28,7 +27,6 @@ export default class User extends PureComponent {
                         <Widgets/>
                     </Row>
                 </Container>
-            </Provider>
         );
     }
 }
