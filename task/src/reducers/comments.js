@@ -1,6 +1,6 @@
 import {handleActions} from 'redux-actions';
 
-import {loadComments, addComments} from 'actions/comments';
+import {loadComments, addComments, loadStarted, loadFailed} from 'actions/comments';
 
 const initialState = {
     loading: false,
@@ -8,25 +8,25 @@ const initialState = {
 };
 
 export default handleActions({
-    [loadComments]: (state) => {
+    [loadStarted]: (state) => {
         return {
             ...state,
-            entries: [
-                {
-                    id: 1,
-                    author: 'Vasya',
-                    comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio doloremque ' +
-                    'explicabo mollitia non nostrum possimus quae recusandae sint voluptatibus?'
-                },
-                {
-                    id: 2,
-                    author: 'Petr',
-                    comment: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi distinctio doloremque ' +
-                    'explicabo mollitia non nostrum possimus quae recusandae sint voluptatibus?'
-                }
-            ]
+            error: null,
+            loading: true,
+        };
+    },
+    [loadFailed]: (state, action) => {
+        return {
+            ...state,
+            loading: false,
+            error: action.payload,
         }
     },
+    [loadComments] : (state, action) => ({
+        ...state,
+        loading: false,
+        entries: [...state.entries, ...action.payload],
+    }),
     [addComments]: (state, action) => {
         return {
             ...state,
